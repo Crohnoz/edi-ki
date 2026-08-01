@@ -33,6 +33,20 @@ document.querySelector('[data-share]')?.addEventListener('click', async () => {
   }
 });
 
+const dynamicStyles = document.createElement('style');
+dynamicStyles.textContent = `
+  .source-library{margin-top:28px;padding:30px;border:1px solid var(--line);border-radius:18px;background:#f7faf4}
+  .source-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .source-links a{display:flex;min-height:118px;flex-direction:column;justify-content:space-between;padding:18px;border:1px solid #d9e2d5;border-radius:12px;background:#fff;color:var(--text);text-decoration:none;transition:.2s}
+  .source-links a:hover{transform:translateY(-2px);border-color:#9bcf59;box-shadow:0 12px 30px rgba(30,50,20,.07)}
+  .source-links strong{font-size:.95rem;line-height:1.25}
+  .source-links span{color:#5f8b2e;font-size:.75rem;font-weight:800}
+  .source-note{margin:18px 0 0;color:#6c7469;font-size:.76rem}
+  @media(max-width:850px){.source-links{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.source-links{grid-template-columns:1fr}.source-library{padding:22px}}
+`;
+document.head.appendChild(dynamicStyles);
+
 const pressGrid = document.querySelector('#prensa .media-grid');
 const socialCard = pressGrid?.querySelector('.social-card');
 
@@ -56,6 +70,7 @@ if (pressGrid) {
     <p class="eyebrow">Enlaces y perfiles públicos</p>
     <div class="source-links">
       <a href="https://www.instagram.com/edi_ki_san/" target="_blank" rel="noopener"><strong>Instagram oficial asociado</strong><span>@edi_ki_san ↗</span></a>
+      <a href="https://www.instagram.com/reel/DaiTbjpOJEk/" target="_blank" rel="noopener"><strong>Publicación original de la limpieza</strong><span>Ver reel ↗</span></a>
       <a href="https://www.adnradio.cl/2026/07/08/y-cuando-limpia-efe-la-aplaudida-leccion-ciudadana-de-un-influencer-en-las-vias-del-tren-que-arrasa-en-redes/" target="_blank" rel="noopener"><strong>Cobertura periodística</strong><span>ADN Radio · 8 julio 2026 ↗</span></a>
       <a href="https://urbanflowenergydrink.cl/" target="_blank" rel="noopener"><strong>Referencia en cultura urbana</strong><span>Urban Flow ↗</span></a>
       <a href="https://music.apple.com/us/artist/edi-ki/1709557721" target="_blank" rel="noopener"><strong>Catálogo musical asociado</strong><span>Apple Music ↗</span></a>
