@@ -29,10 +29,20 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// Firma institucional de esta propuesta.
+document.querySelectorAll('.proposal-bar strong, .impact-brand strong').forEach((brand) => {
+  brand.textContent = 'CHRONOS LABS';
+});
+
+const impactDescription = document.querySelector('.impact-brand p');
+if (impactDescription) {
+  impactDescription.textContent = 'Tecnología aplicada a iniciativas con impacto social.';
+}
+
 document.querySelector('[data-share]')?.addEventListener('click', async () => {
   const shareData = {
     title: 'Edi Ki Acción',
-    text: 'Conoce esta propuesta para organizar voluntariado y acciones comunitarias en Graneros.',
+    text: 'Conoce esta propuesta de Chronos Labs para organizar voluntariado y acciones comunitarias en Graneros.',
     url: window.location.href,
   };
 
